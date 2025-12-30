@@ -110,4 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     setLanguage('ro');
   });
+
+  const contactForm = document.querySelector('#contact form');
+  const contactButton = document.getElementById('contact_button');
+
+  const handleContact = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
+
+    const name = document.getElementById('contact_name').value.trim();
+    const email = document.getElementById('contact_email').value.trim();
+    const message = document.getElementById('contact_message').value.trim();
+
+    const subject = encodeURIComponent('Website contact request');
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+
+    window.location.href = `mailto:office@havoc-it.ro?subject=${subject}&body=${body}`;
+  };
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleContact);
+  }
+
+  if (contactButton) {
+    contactButton.addEventListener('click', handleContact);
+  }
 });

@@ -184,6 +184,17 @@ section h2 {
     background-color: var(--bg-medium);
 }
 
+.services {
+    background-color: var(--bg-light);
+}
+
+.section-subtitle {
+    max-width: 900px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+    line-height: 1.7;
+}
+
 .feature-grid {
     display: flex;
     flex-wrap: wrap;

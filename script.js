@@ -7,6 +7,7 @@
 const translations = {
   en: {
     nav_expertise: 'Expertise',
+    nav_services: 'Services',
     nav_about: 'About',
     nav_testimonials: 'Testimonials',
     nav_contact: 'Contact',
@@ -20,6 +21,7 @@ const translations = {
     feature2_desc: 'Design, deploy, and manage robust IT systems that scale with your business.',
     feature3_title: 'Digital Transformation',
     feature3_desc: 'Leverage cloud, automation, and modern tech to accelerate your digital journey.',
+    services_title: 'Services',
     services_subtitle: 'Operational IT services with SLAs, ticketing, and reporting—built for continuity, security, and auditability (ideal for SMEs and public institutions).',
     svc1_title: 'Service Desk & Support (L1 / L2 / L3)',
     svc1_desc: 'Single point of contact with ticket registration, prioritization, controlled escalation, and clear communication. Practices focused on fast service restoration and maintaining a reliable audit trail.',
@@ -57,6 +59,7 @@ const translations = {
   },
   ro: {
     nav_expertise: 'Expertiză',
+    nav_services: 'Servicii',
     nav_about: 'Despre',
     nav_testimonials: 'Testimoniale',
     nav_contact: 'Contact',
@@ -70,6 +73,7 @@ const translations = {
     feature2_desc: 'Proiectăm, implementăm și gestionăm sisteme IT robuste care cresc odată cu afacerea ta.',
     feature3_title: 'Transformare digitală',
     feature3_desc: 'Valorifică cloud-ul, automatizarea și tehnologiile moderne pentru a accelera transformarea digitală.',
+    services_title: 'Servicii',
     services_subtitle: 'Servicii operaționale IT cu SLA, ticketing și raportare — orientate spre continuitate, securitate și trasabilitate (potrivit pentru IMM-uri și instituții publice).',
     svc1_title: 'Service Desk & Suport (L1 / L2 / L3)',
     svc1_desc: 'Punct unic de contact, înregistrare și prioritizare tichete, escaladare controlată și comunicare periodică. Procese orientate pe restaurarea rapidă a serviciilor și pe păstrarea istoricului și a dovezilor de intervenție (audit trail).',

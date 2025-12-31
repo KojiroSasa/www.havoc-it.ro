@@ -23,9 +23,9 @@ const translations = {
     about_title: 'About Us',
     about_summary: 'Havoc IT Consulting was founded by two senior technology consultants with over 13 years of combined professional experience in IT infrastructure, security and enterprise operations. Their expertise spans complex Linux and Windows environments, multi-tier support models, on-premise and cloud infrastructures, DevOps practices and large-scale system administration.',
     about_rom_title: 'Romanian Clients and Engagements',
-    about_rom_text: 'Throughout their careers, the founders have been involved in projects for key Romanian organizations, including major infrastructure and construction companies such as FCC Construction, Astaldi S.p.A. and Straco Group, as well as Maragro S.R.L., a company focused on the agricultural sector. They have also collaborated with professional services and accounting firms across Romania, and supported public institutions such as schools and municipal government bodies.',
+    about_rom_text: '<li>Delivered infrastructure and operations initiatives for leading Romanian construction and infrastructure firms such as FCC Construction, Astaldi S.p.A. and Straco Group.</li><li>Modernized and supported IT capabilities for Maragro S.R.L., an agriculture-focused company.</li><li>Partnered with accounting and professional services firms nationwide and provided IT assistance to schools and municipal institutions.</li>',
     about_int_title: 'International Experience',
-    about_int_text: 'At an international level, our consultants have worked within global consultancy organizations such as Atos, NTT Data and SAP, contributing to projects for large enterprise clients including Swiss Life, Toll Collect, Evergreen, Carl Zeiss, Helvetia, Hugo Boss, Wintershall, Novozymes and Thales.',
+    about_int_text: '<li>Delivered enterprise programs for Swiss Life, Toll Collect, Evergreen, Carl Zeiss, Helvetia and Hugo Boss while consulting within global advisory organizations.</li><li>Contributed to large-scale infrastructure, security and operations initiatives for Wintershall, Novozymes and Thales.</li>',
     about_conclusion: 'Havoc IT Consulting builds on this individual experience to deliver structured, secure and forward-looking IT services, with a strong focus on automation and the integration of AI-driven technologies to support scalable and efficient business operations.',
     testimonials_title: 'What Our Clients Say',
     testimonial1: '"Havoc modernized our entire infrastructure. We went from legacy systems to a secure, cloud‑native environment without a hitch."',
@@ -58,9 +58,9 @@ const translations = {
     about_title: 'Despre Noi',
     about_summary: 'Havoc IT Consulting a fost fondată de doi consultanți seniori în tehnologie, cu peste 13 ani de experiență profesională cumulată în infrastructură IT, securitate și operațiuni enterprise. Expertiza lor acoperă medii complexe Linux și Windows, modele de suport multi‑nivel, infrastructuri on-premise și cloud, practici DevOps și administrarea sistemelor la scară largă.',
     about_rom_title: 'Clienți și proiecte în România',
-    about_rom_text: 'De-a lungul carierelor lor, fondatorii au fost implicați în proiecte pentru organizații cheie din România, inclusiv companii majore din domeniul infrastructurii și construcțiilor precum FCC Construction, Astaldi S.p.A. și Straco Group, precum și Maragro S.R.L., o companie orientată către sectorul agricol. De asemenea, au colaborat cu firme de servicii profesionale și societăți de contabilitate la nivel național și au sprijinit instituții publice, inclusiv școli și primării.',
+    about_rom_text: '<li>Proiecte de infrastructură și operațiuni pentru lideri locali din construcții și infrastructură precum FCC Construction, Astaldi S.p.A. și Straco Group.</li><li>Modernizare și suport IT pentru Maragro S.R.L., companie orientată spre sectorul agricol.</li><li>Colaborări cu firme de servicii profesionale și societăți de contabilitate la nivel național, plus sprijin pentru școli și autorități municipale.</li>',
     about_int_title: 'Experiență internațională',
-    about_int_text: 'La nivel internațional, consultanții noștri au activat în cadrul unor organizații globale de consultanță precum Atos, NTT Data și SAP, contribuind la proiecte pentru clienți enterprise de anvergură, printre care Swiss Life, Toll Collect, Evergreen, Carl Zeiss, Helvetia, Hugo Boss, Wintershall, Novozymes și Thales.',
+    about_int_text: '<li>Programe enterprise livrate pentru Swiss Life, Toll Collect, Evergreen, Carl Zeiss, Helvetia și Hugo Boss, în cadrul unor companii globale de consultanță.</li><li>Inițiative majore de infrastructură, securitate și operațiuni pentru Wintershall, Novozymes și Thales, coordonate din poziții de consultanță internațională.</li>',
     about_conclusion: 'Havoc IT Consulting valorifică această experiență individuală pentru a livra servicii IT structurate, sigure și orientate spre viitor, cu un accent puternic pe automatizare și integrarea tehnologiilor bazate pe inteligență artificială, în sprijinul unor operațiuni scalabile și eficiente.',
     testimonials_title: 'Ce spun clienții noștri',
     testimonial1: '"Havoc ne-a modernizat întreaga infrastructură. Am trecut de la sisteme vechi la un mediu cloud‑nativ securizat fără probleme."',
@@ -77,6 +77,8 @@ const translations = {
   }
 };
 
+const htmlContentKeys = new Set(['about_rom_text', 'about_int_text']);
+
 function setLanguage(lang) {
   const dict = translations[lang] || translations.en;
   // update text content for each key
@@ -86,8 +88,8 @@ function setLanguage(lang) {
       if (key.startsWith('contact_name') || key.startsWith('contact_email') || key.startsWith('contact_message')) {
         // update placeholder
         element.placeholder = dict[key];
-      } else if (key === 'contact_button' || key === 'cta_button') {
-        element.textContent = dict[key];
+      } else if (htmlContentKeys.has(key)) {
+        element.innerHTML = dict[key];
       } else {
         element.textContent = dict[key];
       }

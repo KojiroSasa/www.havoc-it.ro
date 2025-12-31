@@ -142,7 +142,17 @@ function updateStructuredData(description) {
   script.textContent = JSON.stringify(data, null, 2);
 }
 
-function setLanguage(lang) {
+function syncUrlLanguage(lang) {
+  const url = new URL(window.location.href);
+  if (lang === 'en') {
+    url.searchParams.delete('lang');
+  } else {
+    url.searchParams.set('lang', lang);
+  }
+  window.history.replaceState({}, '', url);
+}
+
+function setLanguage(lang, { updateUrl = false } = {}) {
   const dict = translations[lang] || translations.en;
   const htmlEl = document.documentElement;
   htmlEl.lang = lang;
@@ -173,6 +183,10 @@ function setLanguage(lang) {
 
   localStorage.setItem(STORAGE_KEY, lang);
   updateStructuredData(dict.structured_description);
+
+  if (updateUrl) {
+    syncUrlLanguage(lang);
+  }
 }
 
 function validateEmail(email) {
@@ -225,16 +239,21 @@ function handleFormSubmit(event) {
 }
 
 function initLanguageToggle() {
-  const storedLang = localStorage.getItem(STORAGE_KEY) || 'en';
-  setLanguage(storedLang);
+  const searchParams = new URLSearchParams(window.location.search);
+  const queryLang = searchParams.get('lang');
+  const storedLang = localStorage.getItem(STORAGE_KEY);
+  const hasQueryLang = queryLang && Object.hasOwn(translations, queryLang);
+  const initialLang = hasQueryLang ? queryLang : storedLang || 'en';
+
+  setLanguage(initialLang, { updateUrl: hasQueryLang });
 
   document.getElementById('lang-en').addEventListener('click', (e) => {
     e.preventDefault();
-    setLanguage('en');
+    setLanguage('en', { updateUrl: true });
   });
   document.getElementById('lang-ro').addEventListener('click', (e) => {
     e.preventDefault();
-    setLanguage('ro');
+    setLanguage('ro', { updateUrl: true });
   });
 }
 

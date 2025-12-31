@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Landing Page</title>
+    <!--
+      This simple landing page template is designed to highlight a business
+      offering with modern, responsive design patterns. It features a hero
+      section with a large headline, a features section, an about section,
+      testimonials, and a contact form. Feel free to replace the placeholder
+      text with your own copy and adjust the colors to match your brand. The
+      page uses an external CSS file for styling and relies on flexbox for
+      layout. For a more robust navigation menu you can add a hamburger
+      toggle with JavaScript.
+    -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <!-- Navigation bar -->
+        <nav class="navbar">
+            <div class="logo">HAVOC&nbsp;IT&nbsp;Consulting</div>
+            <ul class="nav-links">
+                <li><a href="#features" id="nav_expertise">Expertise</a></li>
+                <li><a href="#about" id="nav_about">About</a></li>
+                <li><a href="#testimonials" id="nav_testimonials">Testimonials</a></li>
+                <li><a href="#contact" id="nav_contact">Contact</a></li>
+            </ul>
+            <div class="lang-selector">
+                <a href="#" id="lang-en" class="active">EN</a> |
+                <a href="#" id="lang-ro">RO</a>
+            </div>
+        </nav>
+        <!-- Hero text and call‑to‑action -->
+        <div class="hero-content">
+            <h1 id="hero_title">Empowering Your IT Future</h1>
+            <p id="hero_subtitle">Trusted IT consulting and innovative solutions to drive your success.</p>
+            <a href="#contact" class="cta-btn" id="cta_button">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Features section -->
+    <section id="features" class="features">
+        <h2 id="features_title">Our Expertise</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="icon" aria-hidden="true">🔒</div>
+                <h3 id="feature1_title">Cybersecurity</h3>
+                <p id="feature1_desc">Protect your data and infrastructure with comprehensive security assessments and solutions.</p>
+            </div>
+            <div class="feature">
+                <div class="icon" aria-hidden="true">⚙️</div>
+                <h3 id="feature2_title">IT Infrastructure</h3>
+                <p id="feature2_desc">Design, deploy, and manage robust IT systems that scale with your business.</p>
+            </div>
+            <div class="feature">
+                <div class="icon" aria-hidden="true">🚀</div>
+                <h3 id="feature3_title">Digital Transformation</h3>
+                <p id="feature3_desc">Leverage cloud, automation, and modern tech to accelerate your digital journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+        <h2 id="about_title">About Us</h2>
+        <p id="about_summary">
+            Havoc IT Consulting was founded by two passionate technology professionals.
+        </p>
+        <h3 id="about_rom_title">Romanian Clients and Engagements</h3>
+        <p id="about_rom_text">
+            <!-- content will be populated by script.js -->
+        </p>
+        <h3 id="about_int_title">International Experience</h3>
+        <p id="about_int_text">
+            <!-- content will be populated by script.js -->
+        </p>
+        <p id="about_conclusion">
+            <!-- conclusion will be populated by script.js -->
+        </p>
+    </section>
+
+    <!-- Testimonials section -->
+    <section id="testimonials" class="testimonials">
+        <h2 id="testimonials_title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p id="testimonial1">"Havoc modernized our entire infrastructure. We went from legacy
+                systems to a secure, cloud‑native environment without a hitch."</p>
+                <span id="testimonial1_author">- Enterprise&nbsp;Client</span>
+            </div>
+            <div class="testimonial">
+                <p id="testimonial2">"Their team unlocked new efficiencies and helped us automate our
+                workflows. The ROI was immediate."</p>
+                <span id="testimonial2_author">- Mid‑Size&nbsp;Business</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact">
+        <h2 id="contact_title">Contact Us</h2>
+        <p id="contact_subtitle">Ready to grow? Fill out the form below and we'll get back to you soon.</p>
+        <form onsubmit="return false;">
+            <input type="text" name="name" id="contact_name" placeholder="Your Name" required>
+            <input type="email" name="email" id="contact_email" placeholder="Your Email" required>
+            <textarea name="message" id="contact_message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" id="contact_button">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p id="footer_text">© 2025 Havoc IT Consulting. All rights reserved.</p>
+    </footer>
+    <!-- Include the language toggle script -->
+    <script src="script.js"></script>
+</body>
+</html>

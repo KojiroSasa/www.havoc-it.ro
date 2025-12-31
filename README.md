@@ -19,6 +19,7 @@ Open `index.html` in any modern browser. No build step is required.
 - Verify the contact form: required-field validation, honeypot stays hidden, button disables while mail client opens, and the feedback message appears.
 - Switch languages and refresh: ensure content, placeholders, meta tags, and `<html lang>` persist the chosen locale.
 - Confirm sticky nav and CTAs scroll to the correct sections with smooth behavior and adequate section offset.
+- Check mobile breakpoints (414px, 375px, 320px): navbar wraps without overlap and CTAs stay fully visible below hero text.
 - Inspect SEO signals: `<title>`, meta description, canonical, hreflang, OG/Twitter tags, and JSON-LD present for both languages.
 - Run an accessibility pass (keyboard-only navigation, focus visibility, screen reader labels) and confirm color contrast remains readable.
 - Check hero image renders with the defined width/height and high fetch priority; replace with a compressed WebP for additional savings if desired.

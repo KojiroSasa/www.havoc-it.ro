@@ -146,19 +146,11 @@
     <section id="contact" class="contact" aria-labelledby="contact_title">
         <h2 id="contact_title">Contact Us</h2>
         <p id="contact_subtitle">Ready to grow? Fill out the form below and we'll get back to you soon.</p>
-        <form action="#" method="post" novalidate>
-            <label class="visually-hidden" for="contact_name">Name</label>
-            <input type="text" name="name" id="contact_name" placeholder="Your Name" autocomplete="name" required>
-            <label class="visually-hidden" for="contact_email">Email</label>
-            <input type="email" name="email" id="contact_email" placeholder="Your Email" autocomplete="email" required>
-            <label class="visually-hidden" for="contact_message">Message</label>
+        <form action="#" method="post">
+            <input type="text" name="name" id="contact_name" placeholder="Your Name" required>
+            <input type="email" name="email" id="contact_email" placeholder="Your Email" required>
             <textarea name="message" id="contact_message" placeholder="Your Message" rows="4" required></textarea>
-            <div class="honeypot" aria-hidden="true">
-                <label for="contact_company">Leave this field blank</label>
-                <input type="text" name="company" id="contact_company" tabindex="-1" autocomplete="off" aria-hidden="true">
-            </div>
-            <div class="form-feedback" id="contact_feedback" role="status" aria-live="polite"></div>
-            <button type="submit" id="contact_button">Send Message</button>
+            <button type="button" id="contact_button">Send Message</button>
         </form>
     </section>
     </main>
